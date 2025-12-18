@@ -22,6 +22,7 @@ void GripperController::update() {
 }
 
 void GripperController::setClamped(bool shouldClamp) {
+  //checking whether it has actually clamped
   clamped = shouldClamp;
   targetPosition = shouldClamp ? GRIPPER_CLAMPED_POS : GRIPPER_RELEASED_POS;
 }
@@ -29,4 +30,5 @@ void GripperController::setClamped(bool shouldClamp) {
 bool GripperController::isClamped() {
   return clamped && (currentPosition == targetPosition);
 }
+
 
